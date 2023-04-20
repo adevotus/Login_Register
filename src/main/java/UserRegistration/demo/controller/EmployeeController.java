@@ -16,10 +16,12 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
     @PostMapping("/add")
     public String addEmployee(@RequestBody EmployeeDTO employeeDTO){
-       String id =  employeeService.saveEmployee(employeeDTO);
-        return id;
+       String response =  employeeService.saveEmployee(employeeDTO);
+
+        return response;
     }
 
     @PostMapping("/login")
